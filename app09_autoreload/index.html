@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>app09_autoreload</title>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- D3.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+	<!-- main script -->
+	<script type="text/javascript" src="index.js"></script>
+
+
+	<!-- build:remove -->
+	<!-- Connect to server process -->
+	<script>require('electron-connect').client.create()</script>
+	<!-- end:build -->
+</head>
+<body onLoad="init()">
+	<div class="page-header">
+		<h1>app09_autoreload</h1>
+	</div>
+	<div class="col-md-4">
+		ここに何か文章を書きます。
+	</div>
+	<div class="col-md-4">
+		ここに何か文章を書きます。
+	</div>
+	<div class="col-md-4">
+		ここに何か文章を書きます。
+	</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name"    : "app09_autoreload",
+  "version" : "0.0.1",
+  "main"    : "app.js",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "electron-connect": "^0.2.1"
+  }
+}

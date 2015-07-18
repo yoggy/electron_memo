@@ -1,5 +1,8 @@
 {
-  "name"    : "app08_remote",
-  "version" : "0.0.1",
-  "main"    : "main.js"
+  "name": "app08_remote",
+  "version": "0.0.1",
+  "main": "main.js",
+  "devDependencies": {
+    "gulp-connect": "^2.2.0"
+  }
 }
