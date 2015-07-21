@@ -25,7 +25,7 @@ app11_preventclose
 処理の概要
 ----
 
-![img01.png](img01.png)
+![https://farm1.staticflickr.com/288/19695351259_ecb3a4c37e_o.png](https://farm1.staticflickr.com/288/19695351259_ecb3a4c37e_o.png)
 
 Render Process側
 ----
