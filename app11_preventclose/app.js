@@ -3,7 +3,6 @@ var BrowserWindow = require('browser-window');
 
 var ipc = require('ipc');
 var dialog = require('dialog');
-
 var client = require('electron-connect').client
 
 app.on('window-all-closed', function() {
@@ -11,34 +10,8 @@ app.on('window-all-closed', function() {
     app.quit();
 });
 
-//
-// WebContentsからRenderWindowを取得するためのハッシュテーブル
-//
+var WebContentHash = require('./webcontenthash')
 var hash = new WebContentHash();
-
-function WebContentHash() {
-  this.webcontents = [];
-  this.windows     = [];
-}
-
-WebContentHash.prototype.push = function(webcontent, window) {
-  this.webcontents.push(webcontent);
-  this.windows.push(window);
-}
-
-WebContentHash.prototype.getWindow = function(webcontent) {
-  var idx = this.webcontents.indexOf(webcontent);
-  if (idx < 0) return null;
-  return this.windows[idx];
-}
-
-WebContentHash.prototype.delete = function(webcontent) {
-  var idx = this.webcontents.indexOf(webcontent);
-  if (idx < 0) return;
-
-  this.webcontents.splice(idx, 1);
-  this.windows.splice(idx, 1);
-}
 
 //
 // ウインドウ操作用関数
