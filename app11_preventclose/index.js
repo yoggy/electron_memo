@@ -7,8 +7,9 @@ function closeWindow() {
 	var rv = ipc.sendSync('show-dialog');
 	console.log(rv);
 
-	// yesを選択した場合はウインドウを閉じる
-	if (rv == 0) {
+	// yesまたはnoを選択した場合はウインドウを閉じる
+	// cancelの場合はウインドウを閉じない
+	if (rv == 0 || rv == 1) {
 		ipc.send('close-window');
 	}
 }

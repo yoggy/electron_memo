@@ -66,9 +66,12 @@ Main Process側
 
 ウインドウ作成時…(1)(2)
 
+    w.enable_close = false;
     w.on('close', function(evt) {
-      evt.preventDefault();
-      w.webContents.send('close-window-event', 'testargs');
+	  if (w.enable_close == false) {
+        evt.preventDefault();
+        w.webContents.send('close-window-event', 'testargs');
+      }
     }); 
 
 'show-dialog'受信時…(3)
@@ -94,8 +97,10 @@ Main Process側
       var webcontent = evt.sender;
       var w = hash.getWindow(webcontent);
     
-      w.destroy();
       hash.delete(webcontent);
+      
+      w.enable_close = true;
+      w.close();
     });
 
 

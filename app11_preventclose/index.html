@@ -16,7 +16,13 @@
 
 	<!-- build:remove -->
 	<!-- Connect to server process -->
-	<script>require('electron-connect').client.create()</script>
+	<script>
+		if (typeof(require) != 'undefined') {
+			if (require('ipc').ipc.sendSync('is_enable_electron_connect') == true) {
+				require('electron-connect').client.create();
+			}
+		}
+	</script>
 	<!-- end:build -->
 </head>
 <body onLoad="init()">
